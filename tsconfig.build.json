@@ -1,19 +1,20 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
+    "module": "CommonJS",
     "stripInternal": true,
     "plugins": [
       {
-        "transform":        "typescript-transform-paths"
+        "transform": "typescript-transform-paths"
       }, // Transform paths in output .js files
       {
-        "transform":        "typescript-transform-paths",
+        "transform": "typescript-transform-paths",
         "afterDeclarations": true
-      }, // Transform paths in output .d.ts files (Include this line if you output declarations files)
-      {
-        "transform": "@zoltu/typescript-transformer-append-js-extension/output/index.js",
-        "after": true
-      }
+      } // Transform paths in output .d.ts files (Include this line if you output declarations files)
+      // {
+      //   "transform": "@zoltu/typescript-transformer-append-js-extension/output/index.js",
+      //   "after": true
+      // }
     ]
   }
 }
